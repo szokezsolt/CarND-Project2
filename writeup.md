@@ -15,7 +15,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./hist.png "Dictribution of traffic sign classes"
+[image1]: ./hist.png "Distribution of traffic sign classes"
+[image2]: ./pics/1.png "Picture 1"
+[image3]: ./pics/2.png "Picture 2"
+[image4]: ./pics/3.png "Picture 3"
+[image5]: ./pics/4.png "Picture 4"
+[image6]: ./pics/5.png "Picture 5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -91,44 +96,37 @@ The basics of the LeNet architecture was chosen. This has been proven to be idea
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image2] ![alt text][image3] ![alt text][image4] 
+![alt text][image5] ![alt text][image6]
 
-The first image might be difficult to classify because ...
+All images might be difficult to classify because they are "sterilized" pictures, not realistic shots, like the ones in the training-validation set.
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| General Caution      		| General Caution   									| 
+| Yield     			| Speed Limit 60km/h 										|
+| Dangerous Curve to the Left					| Speed Limit 60km/h											|
+| Ahead Only	      		| Speed Limit 60km/h					 				|
+| Speed Limit 60km/h			| Speed Limit 60km/h      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. This is much less compared to the accuracy on the validation set of 94%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is relatively unsure that this is a general caution sign (probability of 0.29), and the image does contain a general caution sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .29         			| General Caution   									| 
+| .48     				| Speed Limit 60km/h 										|
+| .40					| Speed Limit 60km/h										|
+| .51	      			| Speed Limit 60km/h					 				|
+| .65				    | Speed Limit 60km/h      							|
 
 
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
-
+Interestingly, all other predictions were speed limit 60km/h, relatively surely, however only one of them was correct. 
